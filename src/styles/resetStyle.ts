@@ -1,6 +1,7 @@
 import { css } from '@emotion/react';
 
 const resetStyle = css`
+  /* stylelint-disable-next-line selector-not-notation */
   *:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
     all: unset;
     display: revert;
@@ -28,8 +29,8 @@ const resetStyle = css`
 
   /* For images to not be able to exceed their container */
   img {
-    max-block-size: 100%;
     max-inline-size: 100%;
+    max-block-size: 100%;
   }
 
   /* removes spacing between cells in tables */
@@ -78,11 +79,13 @@ const resetStyle = css`
    - fix for the content editable attribute will work properly.
    - webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element */
   :where([contenteditable]:not([contenteditable='false'])) {
+    user-select: auto;
+
+    -webkit-line-break: after-white-space;
+    overflow-wrap: break-word;
+
     -moz-user-modify: read-write;
     -webkit-user-modify: read-write;
-    overflow-wrap: break-word;
-    -webkit-line-break: after-white-space;
-    user-select: auto;
   }
 
   /* apply back the draggable feature - exist only in Chromium and Safari */

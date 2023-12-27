@@ -6,8 +6,8 @@ const colors = {
   textColor01: '#567E46',
   textColor02: '#84A755',
   textColor03: '#BAD063',
-  bgColor: '#EFF3ED'
-}
+  bgColor: '#EFF3ED',
+};
 
 const theme: Theme = {
   colors,
