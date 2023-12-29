@@ -4,7 +4,6 @@ import { commonFlex } from '@styles/common';
 export default function SerachInput() {
   return (
     <>
-      <div>ddd</div>
       <Input placeholder="내용을 입력하세요" type="text" />
     </>
   );
@@ -12,8 +11,11 @@ export default function SerachInput() {
 
 const Input = styled.input`
   ${commonFlex}
-  width: 12.03rem;
+  width: 120rem;
   height: 10rem;
+
+  border: 3px solid;
   border-radius: 50px;
+  background-color: ${({ theme }) => theme.colors.main02};
   box-shadow: 4px 4px 4px 3px rgba(0, 0, 0, 0.25);
 `;
