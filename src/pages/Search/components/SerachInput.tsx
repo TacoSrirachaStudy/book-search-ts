@@ -13,9 +13,12 @@ const Input = styled.input`
   ${commonFlex}
   width: 120rem;
   height: 10rem;
+  padding-left: 4rem;
 
-  border: 3px solid;
+  color: ${({ theme }) => theme.colors.textColor01};
+
+  ${({ theme }) => theme.fonts.SubTitle01};
+  border: 3px solid ${({ theme }) => theme.colors.main01};
   border-radius: 50px;
-  background-color: ${({ theme }) => theme.colors.main02};
   box-shadow: 4px 4px 4px 3px rgba(0, 0, 0, 0.25);
 `;
