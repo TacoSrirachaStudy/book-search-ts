@@ -2,11 +2,16 @@ import styled from '@emotion/styled';
 import { commonFlex } from '@styles/common';
 import SerachInput from './SerachInput';
 import SearchButton from './SearchButton';
-import { useState } from 'react';
 
-export default function SearchWrapper() {
-  const [userInput, setUserInput] = useState('');
-  const [confirmValue, setConfirmValue] = useState('');
+interface WrapperProp {
+  userInput: string;
+  confirmValue: string;
+  setConfirmValue: React.Dispatch<React.SetStateAction<string>>;
+  setUserInput: React.Dispatch<React.SetStateAction<string>>;
+}
+
+export default function SearchWrapper(props: WrapperProp) {
+  const { userInput, confirmValue, setConfirmValue, setUserInput } = props;
 
   return (
     <Wrapper>

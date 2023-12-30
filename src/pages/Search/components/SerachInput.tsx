@@ -11,7 +11,6 @@ export default function SerachInput(prop: SearchInputProp) {
 
   function handleSearch(e: React.ChangeEvent<HTMLInputElement>) {
     setUserInput(e.target.value);
-    console.log(userInput);
   }
 
   return (
