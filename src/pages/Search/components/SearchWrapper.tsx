@@ -19,9 +19,11 @@ export default function SearchWrapper(props: WrapperProp) {
         <SerachInput userInput={userInput} setUserInput={setUserInput} />
         <SearchButton userInput={userInput} setConfirmValue={setConfirmValue} />
       </Container>
-      <Result>
-        <SearchResult>{confirmValue}</SearchResult> 에 대한 검색 결과 입니다.
-      </Result>
+      {confirmValue && (
+        <Result>
+          <SearchResult>{confirmValue}</SearchResult> 에 대한 검색 결과 입니다.
+        </Result>
+      )}
     </Wrapper>
   );
 }
