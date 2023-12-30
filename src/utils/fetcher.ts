@@ -6,5 +6,5 @@ export const fetcher = async (url: string) => {
       Authorization: `${import.meta.env.VITE_REST_API_KEY}`,
     },
   });
-  return response.data;
+  return response.data.documents;
 };
