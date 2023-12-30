@@ -1,10 +1,27 @@
 import styled from '@emotion/styled';
 import { commonFlex } from '@styles/common';
 
-export default function SerachInput() {
+interface SearchInputProp {
+  userInput: string;
+  setUserInput: React.Dispatch<React.SetStateAction<string>>;
+}
+
+export default function SerachInput(prop: SearchInputProp) {
+  const { userInput, setUserInput } = prop;
+
+  function handleSearch(e: React.ChangeEvent<HTMLInputElement>) {
+    setUserInput(e.target.value);
+    console.log(userInput);
+  }
+
   return (
     <>
-      <Input placeholder="내용을 입력하세요" type="text" />
+      <Input
+        placeholder="내용을 입력하세요"
+        type="text"
+        value={userInput}
+        onChange={handleSearch}
+      />
     </>
   );
 }
