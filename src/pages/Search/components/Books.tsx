@@ -18,7 +18,8 @@ export default function Books(props: Book) {
 
 const Container = styled.article`
   ${commonFlex}
-  gap: 4rem
+  gap: 4rem;
+  cursor: pointer;
 `;
 
 const BookImg = styled.img`
