@@ -11,7 +11,13 @@ const resetStyle = css`
   *,
   *::before,
   *::after {
+    scrollbar-width: none;
     box-sizing: border-box;
+
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    &::-webkit-scrollbar {
+      display: none; /* Safari and Chrome */
+    }
   }
 
   /* Reapply the pointer cursor for anchor tags */
