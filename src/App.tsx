@@ -1,4 +1,6 @@
+import Layout from '@components/Layout';
+
 /** App */
 export default function App() {
-  return <>123</>;
+  return <Layout />;
 }
