@@ -1,22 +1,29 @@
+/** @jsxImportSource @emotion/react */
+
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { commonFlex } from '@styles/common';
+import { Link } from 'react-router-dom';
 import { Book } from 'types/books';
 
 export default function Books(props: Book) {
   const { authors, contents, title, thumbnail } = props;
+
   return (
-    <Container>
-      <BookImg alt="책 표지" src={thumbnail} />
-      <SummaryContainer>
-        <Title>{title}</Title>
-        <Auther>{authors}</Auther>
-        <Summary>{contents}</Summary>
-      </SummaryContainer>
-    </Container>
+    <article>
+      <Link css={bookLink} to={`${title.replace(/\s/g, '')}`}>
+        <BookImg alt="책 표지" src={thumbnail} />
+        <SummaryContainer>
+          <Title>{title}</Title>
+          <Auther>{authors}</Auther>
+          <Summary>{contents}</Summary>
+        </SummaryContainer>
+      </Link>
+    </article>
   );
 }
 
-const Container = styled.article`
+const bookLink = css`
   ${commonFlex}
   gap: 4rem;
   cursor: pointer;
