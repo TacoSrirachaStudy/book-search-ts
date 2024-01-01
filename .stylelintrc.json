@@ -1,0 +1,11 @@
+{
+  "extends": ["stylelint-config-clean-order", "stylelint-config-recommended"],
+  "plugins": ["stylelint-order"],
+  "overrides": [
+    {
+      "files": ["**/*.tsx", "**/*.ts"],
+      "customSyntax": "postcss-styled-syntax"
+    }
+  ],
+  "ignoreFiles": ["styles/*.ts"]
+}
