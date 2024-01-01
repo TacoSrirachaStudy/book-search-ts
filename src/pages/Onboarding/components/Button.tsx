@@ -1,12 +1,13 @@
 import styled from '@emotion/styled';
 import { commonFlex } from '@styles/common';
+import { Link } from 'react-router-dom';
 
 /** Button */
 export default function Button() {
-  return <GoToButton href="/search">바로가기</GoToButton>;
+  return <GoToButton to="/search">바로가기</GoToButton>;
 }
 
-const GoToButton = styled.a`
+const GoToButton = styled(Link)`
   ${commonFlex}
   width: 30rem;
   height: 8rem;
