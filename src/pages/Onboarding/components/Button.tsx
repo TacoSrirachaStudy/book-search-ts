@@ -3,10 +3,10 @@ import { commonFlex } from '@styles/common';
 
 /** Button */
 export default function Button() {
-  return <GoToButton>바로가기</GoToButton>;
+  return <GoToButton href="/search">바로가기</GoToButton>;
 }
 
-const GoToButton = styled.button`
+const GoToButton = styled.a`
   ${commonFlex}
   width: 30rem;
   height: 8rem;
